@@ -27,7 +27,9 @@
         </nav>
         <div class="header-right">
             <!-- Кнопка пошуку -->
-            <button class="search-btn">🔍</button>
+            <button class="search-btn">
+                <img src="images/search.png" alt="Пошук">
+            </button>
             <!-- Перемикач мов -->
             <div class="language-switcher">
                 <a href="?lang=ua" class="lang active">
@@ -74,6 +76,79 @@
                 <p>«Електронні комунікації та радіотехніка»</p>
             </div>
         </div>
+    </section>
+
+    <!-- Таблиця освітньої програми -->
+    <section id="program">
+        <h2>Освітня програма: Інжинирінг і програмування інфокомунікаційних систем (1 курс)</h2>
+        <div class="table-wrapper">
+            <!-- Таблиця 1 семестр -->
+            <table>
+                <thead>
+                <tr>
+                    <th>1 семестр</th>
+                    <th>Дисципліна</th>
+                    <th>Години</th>
+                    <th>Кредити ECTS</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Вища математика</td>
+                    <td>120</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Програмування</td>
+                    <td>100</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Англійська мова</td>
+                    <td>80</td>
+                    <td>2</td>
+                </tr>
+                </tbody>
+            </table>
+            <!-- Таблиця 2 семестр -->
+            <table>
+                <thead>
+                <tr>
+                    <th>2 семестр</th>
+                    <th>Дисципліна</th>
+                    <th>Години</th>
+                    <th>Кредити ECTS</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Комп'ютерні мережі</td>
+                    <td>90</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Фізика</td>
+                    <td>100</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Алгоритми та структури даних</td>
+                    <td>110</td>
+                    <td>4</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>
+            У навчальній програмі особливу увагу приділено базовим дисциплінам з програмування, математики та інженерних наук, що формують основу для подальшого вивчення інфокомунікаційних технологій.
+        </p>
     </section>
 
     <section id="numbers">
@@ -198,6 +273,67 @@
                 <p><a href="mailto:k504@khai.edu">k504@khai.edu</a></p>
                 <p><a href="mailto:PK@khai.edu">PK@khai.edu</a></p>
             </div>
+        </div>
+    </section>
+
+    <!-- Форма зворотного зв'язку -->
+    <section id="feedback">
+        <div class="pic-box">
+            <img src="images/form.png" alt="Форма - зворотній зв’язок">
+        </div>
+
+        <div class="form-box">
+            <form class="custom-form" action="#" method="post">
+
+                <div class="field field-text">
+                    <label for="name">Ваше ім’я та прізвище</label>
+                    <input type="text" id="name" name="name" size="58" maxlength="250" required>
+                </div>
+
+                <div class="field field-phone">
+                    <label for="phone">Контактний телефон</label>
+                    <input type="tel" id="phone" name="phone" size="28" maxlength="115">
+                </div>
+
+                <div class="field field-mail">
+                    <label for="email">Електронна пошта</label>
+                    <input type="email" id="email" name="email" size="62" maxlength="245" required>
+                </div>
+
+                <div class="field field-telegram">
+                    <label for="telegram">Телеграм</label>
+                    <input type="text" id="telegram" name="telegram" size="55" maxlength="240">
+                </div>
+
+                <div class="field field-text">
+                    <label for="score-math">Бали НМТ з Математики</label>
+                    <input type="text" id="score-math" name="score_math" size="57" maxlength="248">
+                </div>
+
+                <div class="field field-text">
+                    <label for="score-ukr">Бали НМТ з Української мови</label>
+                    <input type="text" id="score-ukr" name="score_ukr" size="59" maxlength="249">
+                </div>
+
+                <div class="field field-text">
+                    <label for="score-history">Бали НМТ з Історії України</label>
+                    <input type="text" id="score-history" name="score_history" size="56" maxlength="243">
+                </div>
+
+                <div class="field field-text">
+                    <label for="score-extra">Четвертий предмет з НМТ і бали за ним</label>
+                    <input type="text" id="score-extra" name="score_extra" size="61" maxlength="252">
+                </div>
+
+                <div class="field field-textarea">
+                    <label for="message">Які напрями вам цікаві?</label>
+                    <textarea id="message" name="message" rows="4" cols="58"></textarea>
+                </div>
+
+                <div class="form-buttons">
+                    <input type="submit" class="btn-submit" value="Надіслати">
+                </div>
+            </form>
         </div>
     </section>
 
