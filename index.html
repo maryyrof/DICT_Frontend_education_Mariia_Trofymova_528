@@ -11,53 +11,54 @@
 </head>
 <body>
 <header>
-    <div class="header-container">
-        <div class="logo">
-            <img src="images/logo.svg" alt="Логотип кафедри">
+    <div class="logo">
+        <img src="images/logo.svg" alt="Логотип кафедри DІCТ">
         </div>
+
+    <!-- Навігація -->
         <nav>
-            <ul>
-                <li><a href="#specialties">Спеціальності</a></li>
-                <li><a href="#numbers">Якщо в числах</a></li>
-                <li><a href="#reviews">Відгуки</a></li>
-                <li><a href="#science">Наука</a></li>
-                <li><a href="#trust">Нам довіряють</a></li>
-                <li><a href="#contacts">Контакти</a></li>
-                <li><a href="#news">Новини</a></li>
+            <ul class="main-menu">
+                <li><a class="menu-link" href="#specialties">Спеціальності</a></li>
+                <li><a class="menu-link" href="#numbers">Якщо в числах</a></li>
+                <li><a class="menu-link" href="#reviews">Відгуки</a></li>
+                <li><a class="menu-link" href="#science">Наука</a></li>
+                <li><a class="menu-link" href="#trust">Нам довіряють</a></li>
+                <li><a class="menu-link" href="#contacts">Контакти</a></li>
+                <li><a class="menu-link" href="#news">Новини</a></li>
             </ul>
         </nav>
-        <div class="header-right">
-            <!-- Кнопка пошуку -->
-            <button class="search-btn">
-                <img src="images/search.png" alt="Пошук">
-            </button>
-            <!-- Перемикач мов -->
-            <div class="language-switcher">
-                <a href="?lang=ua" class="lang active">
-                    <img src="images/ua-flag.png" alt="UA"> UA
-                </a>
-                <span>|</span>
-                <a href="?lang=en" class="lang">
-                    <img src="images/en-flag.png" alt="EN"> EN
-                </a>
-            </div>
+
+        <!-- Кнопка пошуку -->
+        <div class="search">
+            <img src="images/search.svg" alt="Пошук">
         </div>
-    </div>
+        <div class="lang">
+            <ul class="lang-wrapper">
+                <li class="ua"><a class="is-active" href="#">UA</a></li>
+                <li class="en"><a href="#">EN</a></li>
+            </ul>
+        </div>
 </header>
 
-<main>
-    <section id="banner">
-        <div class="banner-text">
-            <h1>Створюй майбутнє.<br>Тут і зараз!</h1>
+<!-- Банер -->
+<section id="banner">
+    <div class="content-wrapper">
+        <h1>Створюй майбутнє.<br><span>Тут і зараз!</span></h1>
+
+        <div class="description">
             <p>
-                Вибери не просто освіту — обери шлях до свого технологічного майбутнього!
-                Кафедра ІКТ ХАІ — це місце, де ідеї стають реальністю, а знання відкривають
-                двері до кар’єри мрії. Почни свій шлях вже сьогодні!
+                Обери не просто освіту — обери шлях до свого технологічного майбутнього!
+                Кафедра DICT ХАІ — це місце, де ідеї стають реальністю,
+                а знання відкривають двері до кар’єри мрії.
+                Почни свій шлях вже сьогодні!
             </p>
-            <button class="cta">Хочу поступити</button>
         </div>
-        <div class="banner-image">
-            <img src="images/boy 2.png" alt="Студент кафедри ІКТ">
+
+            <a href="#" class="button">Хочу вступити</a>
+        </div>
+
+        <div class="image-wrapper">
+            <img src="images/man.png" alt="Студент кафедри DICT">
         </div>
     </section>
 
@@ -174,43 +175,37 @@
 
     <section id="reviews">
         <h2><span style="color:red">#DICT</span>Experience</h2>
-        <div class="carousel">
-            <button class="prev">⟨</button>
-            <div class="carousel-window">
-                <div class="carousel-track">
-                    <div class="review">
-                        <img class="avatar" src="images/feedback-1.png" alt="Вадим">
-                        <p>"Кафедра відмінна та сучасна №1"</p>
-                        <p><b>Вадим</b><br>528, група</p>
-                        <audio controls>
-                            <source src="images/example.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                    <div class="review">
-                        <img class="avatar" src="images/feedback-2.png" alt="Дмитро">
-                        <p>"Кафедра надихає до навчання №2"</p>
-                        <p><b>Дмитро</b><br>528, група</p>
-                    </div>
-                    <div class="review">
-                        <img class="avatar" src="images/feedback-3.png" alt="Марія">
-                        <p>"Кафедра надзвичайно цікава №3"</p>
-                        <p><b>Марія</b><br>528, група</p>
-                    </div>
-                    <div class="review">
-                        <p>"Кафедра дуже цікава і пізнавальна №4"</p>
-                        <p><b>Максим</b><br>528, група</p>
-                    </div>
-                    <div class="review">
-                        <p>"Кафедра надихає та мотивує №5"</p>
-                        <p><b>Тимофій</b><br>528, група</p>
-                    </div>
-                    <div class="review">
-                        <p>"Кафедра професійна і доброзичлива №6"</p>
-                        <p><b>Єгор</b><br>528, група</p>
-                    </div>
-                </div>
+        <div class="carousel-track">
+            <div class="review">
+                <img class="avatar" src="images/feedback-1.png" alt="Вадим">
+                <p>"Кафедра відмінна та сучасна №1"</p>
+                <p><b>Вадим</b><br>528, група</p>
+                <audio controls>
+                    <source src="images/example.mp3" type="audio/mpeg">
+                </audio>
             </div>
-            <button class="next">⟩</button>
+            <div class="review">
+                <img class="avatar" src="images/feedback-2.png" alt="Дмитро">
+                <p>"Кафедра надихає до навчання №2"</p>
+                <p><b>Дмитро</b><br>528, група</p>
+            </div>
+            <div class="review">
+                <img class="avatar" src="images/feedback-3.png" alt="Марія">
+                <p>"Кафедра надзвичайно цікава №3"</p>
+                <p><b>Марія</b><br>528, група</p>
+            </div>
+            <div class="review">
+                <p>"Кафедра дуже цікава і пізнавальна №4"</p>
+                <p><b>Максим</b><br>528, група</p>
+            </div>
+            <div class="review">
+                <p>"Кафедра надихає та мотивує №5"</p>
+                <p><b>Тимофій</b><br>528, група</p>
+            </div>
+            <div class="review">
+                <p>"Кафедра професійна і доброзичлива №6"</p>
+                <p><b>Єгор</b><br>528, група</p>
+            </div>
         </div>
     </section>
 
@@ -386,7 +381,6 @@
 
         <button class="all-news">Всі новини</button>
     </section>
-</main>
 
 <footer>
     <div class="footer-container">
