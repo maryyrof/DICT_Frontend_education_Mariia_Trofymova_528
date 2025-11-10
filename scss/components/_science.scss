@@ -1,0 +1,18 @@
+#science {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 0;
+  text-align: left;
+
+  .science-image img {
+    max-width: 400px;
+    height: auto;
+  }
+
+  .science-text {
+    max-width: 500px;
+    color: #fff;
+  }
+}

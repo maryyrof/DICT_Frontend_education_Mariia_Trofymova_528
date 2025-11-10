@@ -1,0 +1,26 @@
+#reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 400px;
+  gap: 30px;
+
+  .carousel-track {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    .review {
+      width: calc(100% / 3 - 48px);
+      background: #222;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 300px;
+      color: #fff;
+      margin: 0;
+    }
+  }
+}

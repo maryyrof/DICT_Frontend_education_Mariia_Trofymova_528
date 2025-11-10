@@ -1,10 +1,48 @@
 #in-numbers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 0;
+  min-height: 360px;
+
+  .section-title {
+    margin-bottom: 24px;
+    color: #fff;
+  }
+
   .cards-wrapper {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+
     .card {
       padding: 10px;
       border-right: 1px solid $red;
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 120px;
+
       &:last-child {
         border-right: none;
+      }
+
+      h3 {
+        margin: 0 0 6px;
+        font-size: 42px;
+        line-height: 1;
+        color: #fff;
+      }
+
+      p {
+        margin: 0;
+        color: $grey;
       }
     }
   }
