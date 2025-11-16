@@ -1,0 +1,57 @@
+.layout-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* дві колонки: контент + сайдбар */
+    gap: 30px;
+    margin-top: 60px;
+    padding: 20px;
+}
+
+article#main {
+    background: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+article#main h2, article#main h3 {
+    color: #ff3b39;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+#sidebar {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+#sidebar h3 {
+    color: #ff3b39;
+}
+
+footer {
+    margin-top: 40px;
+    border-top: 2px solid #ff3b39;
+    text-align: center;
+    color: #fff;
+}
+
+.gallery-grid img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+}
