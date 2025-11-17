@@ -127,3 +127,82 @@ header {
     }
   }
 }
+
+header {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  position: relative;
+  z-index: 9;
+
+  nav {
+    width: calc(100% - 292px);
+    display: flex;
+
+    .burger-menu {
+      margin-left: auto;
+      width: fit-content;
+
+      .menu-toggle {
+        margin: 0;
+      }
+    }
+
+    .main-menu {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: none;    // приховане меню
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      font-weight: bold;
+
+      .menu-link {
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+
+      &.show {       // показувати меню
+        display: flex;
+        position: absolute;
+        top: 53px;
+        width: 90%;
+        left: 0;
+        margin: 0;
+        padding: 20px;
+      }
+    }
+  }
+}
+
+/*  Для десктопних пристроїв  */
+@media (min-width: 1200px) {
+  header {
+    nav {
+      justify-content: center;
+
+      .burger-menu {
+        display: none;
+      }
+
+      .main-menu {
+        display: flex;
+      }
+    }
+  }
+}
+
+/* Для планшетів */
+@media (min-width: 796px) {
+  .main-menu {
+    flex-direction: row;
+    justify-content: center;
+  }
+}

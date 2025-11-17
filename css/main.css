@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?  family=Comfortaa:  wght@300..700&family=Geologica  :wght@100..900  &display=swap");
 :root {
   --primary-color: #1d1d1d;
@@ -131,6 +132,78 @@ a {
   background: var(--primary-color);
 }
 
+body {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 26px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 22px;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+h6 {
+  font-size: 18px;
+}
+
+@media (min-width: 796px) {
+  body {
+    font-size: 16px;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  h3 {
+    font-size: 26px;
+  }
+  h4 {
+    font-size: 24px;
+  }
+  h5 {
+    font-size: 22px;
+  }
+  h6 {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 32px;
+  }
+  h3 {
+    font-size: 30px;
+  }
+  h4 {
+    font-size: 28px;
+  }
+  h5 {
+    font-size: 24px;
+  }
+  h6 {
+    font-size: 22px;
+  }
+}
 header {
   padding: 20px;
   position: relative;
@@ -250,6 +323,73 @@ header .lang .lang-wrapper li.en a.is-active::before {
   display: block;
 }
 
+header {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  position: relative;
+  z-index: 9;
+}
+header nav {
+  width: calc(100% - 292px);
+  display: flex;
+}
+header nav .burger-menu {
+  margin-left: auto;
+  width: fit-content;
+}
+header nav .burger-menu .menu-toggle {
+  margin: 0;
+}
+header nav .main-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  font-weight: bold;
+}
+header nav .main-menu .menu-link {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+header nav .main-menu.show {
+  display: flex;
+  position: absolute;
+  top: 53px;
+  width: 90%;
+  left: 0;
+  margin: 0;
+  padding: 20px;
+}
+
+/*  Для десктопних пристроїв  */
+@media (min-width: 1200px) {
+  header nav {
+    justify-content: center;
+  }
+  header nav .burger-menu {
+    display: none;
+  }
+  header nav .main-menu {
+    display: flex;
+  }
+}
+/* Для планшетів */
+@media (min-width: 796px) {
+  .main-menu {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
 #banner {
   position: relative;
   height: 720px;
