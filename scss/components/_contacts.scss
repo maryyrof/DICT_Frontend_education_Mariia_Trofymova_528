@@ -2,15 +2,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
-  min-height: 400px;
   gap: 30px;
+  padding: 40px 0;
+  min-height: 400px;
 
   .contact-blocks {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 40px;
+    grid-template-columns: 1fr;  // мобільний
+    gap: 20px;
     width: 100%;
     max-width: 900px;
   }
@@ -20,5 +20,35 @@
     color: #fff;
     border-radius: 10px;
     padding: 20px;
+  }
+}
+
+/* ПЛАНШЕТ */
+@include tablet {
+  #contacts {
+    .contact-blocks {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+  }
+}
+
+/* ЛАПТОП */
+@include laptop {
+  #contacts {
+    .contact-blocks {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+  }
+}
+
+/* ДЕСКТОП */
+@include desktop {
+  #contacts {
+    .contact-blocks {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
   }
 }

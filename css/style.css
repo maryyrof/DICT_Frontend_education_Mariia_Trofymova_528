@@ -8,7 +8,7 @@ body {
 
 /* 3. Стилізація шапки */
 header {
-    padding-block: 20px;    /* відступи зверху і знизу */
+    padding-block: 20px; /* відступи зверху і знизу */
 }
 
 /* 4. Загальні відступи між розділами */
@@ -51,4 +51,51 @@ section#news .news-card:last-child {
 /* 5. Нижній колонтитул */
 footer {
     padding: 40px 0;
+}
+
+/* ===== Адаптивність ===== */
+
+/* Планшет (min-width: 796px) */
+@media (min-width: 796px) {
+
+    /* Спеціальності — flex layout */
+    section#specialties .specialty-cards {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    /* Секція чисел */
+    section#numbers {
+        display: flex;
+    }
+    section#numbers .number:last-child {
+        border-right: none;
+    }
+
+    /* Відгуки — можна додати flex для горизонтальної верстки */
+    section#reviews .review-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    /* Новини — кілька колонок */
+    section#news .news-track {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+
+/* Десктоп (min-width: 1200px) */
+@media (min-width: 1200px) {
+    section#news .news-track {
+        gap: 40px;
+    }
+
+    section#reviews .review-cards {
+        gap: 30px;
+    }
 }
