@@ -8,8 +8,20 @@
     <title>Homepage | Department of Information and Communication Technologies</title>
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Geologica:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <!-- jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Slick JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- main.js -->
+    <script type="text/javascript" src="js/main.js" ></script>
 </head>
 <body>
+
 <header>
     <div class="logo">
         <img src="images/logo.svg" alt="Логотип кафедри DІCТ">
@@ -20,7 +32,6 @@
             <div class="burger-menu">
                 <button class="menu-toggle button">Меню</button>
             </div>
-
             <ul class="main-menu">
                 <li><a class="menu-link" href="#specialties">Спеціальності</a></li>
                 <li><a class="menu-link" href="#numbers">Якщо в числах</a></li>
@@ -343,49 +354,51 @@
 
     <section id="news">
         <h2>Новини</h2>
-        <div class="news-carousel">
-            <button class="prev-news">⟨</button>
-            <div class="news-window">
-                <div class="news-track">
-                    <div class="news-card">
-                        <video autoplay muted loop playsinline>
-                            <source src="images/example.mp4" type="video/mp4">
-                        </video>
-                        <h3>Відеоновина</h3>
-                        <p>Перевірочне відео для функції автоматичного запуску в новинах.</p>
-                        <small>11 March 2025</small>
-                    </div>
-                    <div class="news-card">
-                        <img src="images/image.png" alt="Новина 1">
-                        <h3>Новина №1</h3>
-                        <p>Ми оновили дизайн головної сторінки – тепер навігація ще зручніша.</p>
-                        <small>4 October 2025</small>
-                    </div>
-                    <div class="news-card">
-                        <img src="images/image1.png" alt="Новина 2">
-                        <h3>Новина №2</h3>
-                        <p>Запущено новий онлайн-курс для підвищення кваліфікації.</p>
-                        <small>15 May 2025</small>
-                    </div>
-                    <div class="news-card">
-                        <img src="images/image2.png" alt="Новина 3">
-                        <h3>Новина №3</h3>
-                        <p>Студенти кафедри перемогли у регіональному конкурсі проєктів.</p>
-                        <small>9 April 2025</small>
-                    </div>
-                    <div class="news-card">
-                        <img src="images/image4.png" alt="Новина 4">
-                        <h3>Новина №4</h3>
-                        <p>Проведено вебінар з фахівцями галузі – всі матеріали доступні онлайн.</p>
-                        <small>25 September 2025</small>
-                    </div>
-                </div>
+
+        <div class="news-cards">
+
+            <div class="news-card">
+                <video autoplay muted loop playsinline>
+                    <source src="images/example.mp4" type="video/mp4">
+                </video>
+                <h3>Відеоновина</h3>
+                <p>Перевірочне відео для функції автоматичного запуску.</p>
+                <small>11 March 2025</small>
             </div>
-            <button class="next-news">⟩</button>
+
+            <div class="news-card">
+                <img src="images/image.png" alt="Новина 1">
+                <h3>Новина №1</h3>
+                <p>Ми оновили дизайн головної сторінки – тепер навігація ще зручніша.</p>
+                <small>4 October 2025</small>
+            </div>
+
+            <div class="news-card">
+                <img src="images/image1.png" alt="Новина 2">
+                <h3>Новина №2</h3>
+                <p>Запущено новий онлайн-курс для підвищення кваліфікації.</p>
+                <small>15 May 2025</small>
+            </div>
+
+            <div class="news-card">
+                <img src="images/image2.png" alt="Новина 3">
+                <h3>Новина №3</h3>
+                <p>Студенти кафедри перемогли у регіональному конкурсі проєктів.</p>
+                <small>9 April 2025</small>
+            </div>
+
+            <div class="news-card">
+                <img src="images/image4.png" alt="Новина 4">
+                <h3>Новина №4</h3>
+                <p>Проведено вебінар з фахівцями галузі – матеріали онлайн.</p>
+                <small>25 September 2025</small>
+            </div>
+
         </div>
 
         <button class="all-news">Всі новини</button>
     </section>
+
 
 <footer>
     <div class="footer-container">
@@ -412,61 +425,6 @@
         </div>
     </div>
 </footer>
-
-
-<script>
-    const track = document.querySelector('.carousel-track');
-    const prevBtn = document.querySelector('.prev');
-    const nextBtn = document.querySelector('.next');
-
-    let index = 0;
-    const cardWidth = 220; // ширина картки + відступи
-    const visibleCards = 3;
-    const totalCards = track.children.length;
-
-    nextBtn.addEventListener('click', () => {
-        index++;
-        if (index > totalCards - visibleCards) {
-            index = 0;
-        }
-        track.style.transform = `translateX(${-cardWidth * index}px)`;
-    });
-
-    prevBtn.addEventListener('click', () => {
-        index--;
-        if (index < 0) {
-            index = totalCards - visibleCards;
-        }
-        track.style.transform = `translateX(${-cardWidth * index}px)`;
-    });
-</script>
-
-<script>
-    const newsTrack = document.querySelector('.news-track');
-    const prevNews = document.querySelector('.prev-news');
-    const nextNews = document.querySelector('.next-news');
-
-    let newsIndex = 0;
-    const newsCardWidth = 240;
-    const visibleNews = 3;
-    const totalNews = newsTrack.children.length;
-
-    nextNews.addEventListener('click', () => {
-        newsIndex++;
-        if (newsIndex > totalNews - visibleNews) {
-            newsIndex = 0;
-        }
-        newsTrack.style.transform = `translateX(${-newsCardWidth * newsIndex}px)`;
-    });
-
-    prevNews.addEventListener('click', () => {
-        newsIndex--;
-        if (newsIndex < 0) {
-            newsIndex = totalNews - visibleNews;
-        }
-        newsTrack.style.transform = `translateX(${-newsCardWidth * newsIndex}px)`;
-    });
-</script>
 
 </body>
 </html>

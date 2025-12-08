@@ -746,13 +746,13 @@ header nav .main-menu .menu-link {
   color: #fff;
   margin-bottom: 20px;
 }
-#news .news-carousel {
+#news .news-cards {
   display: flex;
   flex-direction: column;
   gap: 20px;
   width: 100%;
 }
-#news .news-carousel button {
+#news .news-cards button {
   background: #ff3b39;
   color: #fff;
   border: none;
@@ -762,7 +762,7 @@ header nav .main-menu .menu-link {
   cursor: pointer;
   transition: background 0.3s;
 }
-#news .news-carousel button:hover {
+#news .news-cards button:hover {
   background: #ff1a18;
 }
 #news .news-window {
@@ -804,7 +804,7 @@ header nav .main-menu .menu-link {
 }
 
 @media (min-width: 796px) {
-  #news .news-carousel {
+  #news .news-cards {
     flex-direction: row;
     justify-content: center;
     align-items: center;
