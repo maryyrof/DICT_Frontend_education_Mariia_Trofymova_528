@@ -1,50 +1,74 @@
 header {
-  padding: 20px;
-  position: relative;
+  font-family: $font-main;
+  background: #222;
+  color: #fff;
+  padding: 20px 0;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  gap: 20px;
   align-items: center;
+  gap: 20px;
+  position: relative;
   z-index: 9;
 
   .logo {
     width: 104px;
   }
-  nav {
-    width: calc(100% - 292px);
-  }
-  .search {
-    width: 24px;
-    margin-left: auto;
-  }
-  .lang {
-    width: 104px;
-  }
 
   nav {
-    width: calc(100% - 292px);
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    .burger-menu {
+      margin-left: auto;
+      display: block;
+
+      .menu-toggle {
+        background: $red;
+        color: #fff;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-family: $font-main;
+      }
+    }
+
     .main-menu {
-      margin: 0;
-      padding: 0;
       list-style: none;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      font-weight: bold;
+      margin: 0;
+      padding: 20px;
+      display: none;
+      flex-direction: column;
+      gap: 14px;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background: #222;
+      border-radius: 10px;
+
+      &.show {
+        display: flex;
+      }
+
       .menu-link {
         text-decoration: none;
-        color: $white;
         text-transform: uppercase;
         font-weight: bold;
+        color: #fff;
       }
     }
   }
 
+  .search {
+    width: 24px;
+    margin-left: auto;
+  }
+
   .lang {
     width: 104px;
+
     .lang-wrapper {
       list-style: none;
       margin: 0;
@@ -53,6 +77,7 @@ header {
       align-items: center;
       justify-content: space-between;
       gap: 10px;
+
       &::before {
         content: "";
         display: block;
@@ -62,67 +87,108 @@ header {
         border: 1px solid $white;
         order: 2;
       }
+
       li {
         font-size: 14px;
         font-weight: bold;
         line-height: 24px;
         color: $grey;
         position: relative;
+
         a {
           text-decoration: none;
           color: $grey;
-          display: inline-block;
-          font-size: 14px;
           font-weight: bold;
-          line-height: 24px;
+
           &.is-active {
             color: $white;
           }
         }
-        &.ua {
-          order: 1;
-          a {
-            &::after {
-              content: '';
-              display: none;
-              width: 18px;
-              height: 18px;
-              border-radius: 50%;
-              background: url("../images/uk.png");
-              background-size: 18px 18px;
-              position: absolute;
-              top: 3px;
-              right: -31px;
-            }
-            &.is-active {
-              &::after {
-                display: block;
-              }
-            }
-          }
+
+        &.ua a::after {
+          content: '';
+          display: none;
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          background: url("../images/uk.png") no-repeat;
+          background-size: 18px 18px;
+          position: absolute;
+          top: 3px;
+          right: -31px;
         }
-        &.en {
-          order: 3;
-          a {
-            &::before {
-              content: '';
-              display: none;
-              width: 18px;
-              height: 18px;
-              border-radius: 50%;
-              background: url("../images/en.png") no-repeat;
-              background-size: 18px 18px;
-              position: absolute;
-              top: 3px;
-              left: -31px;
-            }
-            &.is-active {
-              &::before {
-                display: block;
-              }
-            }
-          }
+
+        &.ua a.is-active::after {
+          display: block;
         }
+
+        &.en a::before {
+          content: '';
+          display: none;
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          background: url("../images/en.png") no-repeat;
+          background-size: 18px 18px;
+          position: absolute;
+          top: 3px;
+          left: -31px;
+        }
+
+        &.en a.is-active::before {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// Планшет (підключення медіа-міксіну)
+@include tablet {
+  header {
+    nav {
+      width: calc(100% - 200px);
+
+      .main-menu {
+        flex-direction: row;
+        display: flex !important;
+        position: static;
+        padding: 0;
+        background: none;
+      }
+
+      .burger-menu {
+        display: block;
+      }
+    }
+  }
+}
+
+// Ноутбук
+@include laptop {
+  header {
+    nav {
+      .main-menu {
+        top: 70px;
+      }
+    }
+  }
+}
+
+// Десктоп
+@include desktop {
+  header {
+    nav {
+      .burger-menu {
+        display: none;
+      }
+
+      .main-menu {
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        padding: 0;
+        background: none;
       }
     }
   }

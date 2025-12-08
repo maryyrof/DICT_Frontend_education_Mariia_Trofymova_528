@@ -1,5 +1,30 @@
+// Міксін для карток
 @mixin card {
   padding: $base-padding;
   border-radius: 20px;
   border: 1px solid $grey;
 }
+
+// Медіа-запити для адаптивності
+
+// Планшет
+@mixin tablet {
+  @media (min-width: $bp-tablet) {
+    @content;
+  }
+}
+
+// Ноутбук / невеликий десктоп
+@mixin laptop {
+  @media (min-width: $bp-laptop) {
+    @content;
+  }
+}
+
+// Великий десктоп
+@mixin desktop {
+  @media (min-width: $bp-desktop) {
+    @content;
+  }
+}
+

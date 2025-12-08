@@ -1,31 +1,136 @@
 #banner {
   position: relative;
-  height: 720px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+
   .content-wrapper {
-    width: 67%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
     position: relative;
-    z-index: 9;
+    z-index: 2;
+
     h1 {
       margin: 0;
-    }
-    .description {
-      p {
-        margin: 0;
+      font-weight: bold;
+      color: #fff;
+
+      span {
+        display: block;
       }
     }
+
+    .description p {
+      margin: 0;
+      font-size: 16px;
+      color: #7c7c7c;
+    }
+
     .button {
       text-decoration: none;
       cursor: pointer;
+      background: #ff3b39;
+      color: #fff;
+      padding: 12px 32px;
+      border-radius: 4px;
+      font-weight: bold;
+
+      &:hover {
+        background: #ff1a18;
+      }
     }
   }
+
   .image-wrapper {
-    position: absolute;
-    top: -80px;
-    right: 0;
+    width: 100%;
+    position: relative;
+    height: auto;
+    margin-top: 20px;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+}
+
+/* Планшет */
+@include tablet {
+  #banner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+
+    .content-wrapper {
+      width: 60%;
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .description p {
+        font-size: 18px;
+      }
+    }
+
+    .image-wrapper {
+      width: 40%;
+      margin-top: 0;
+
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+/* Ноутбук / невеликий десктоп */
+@include laptop {
+  #banner {
+    .content-wrapper {
+      h1 {
+        font-size: 42px;
+      }
+    }
+  }
+}
+
+/* Десктоп */
+@include desktop {
+  #banner {
+    height: 720px;
+    padding: 0;
+
+    .content-wrapper {
+      gap: 30px;
+
+      h1 {
+        font-size: 48px;
+      }
+    }
+
+    .image-wrapper {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 32%;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+    }
   }
 }

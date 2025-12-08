@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
   padding: 40px 0;
   min-height: 360px;
@@ -14,24 +13,17 @@
 
   .cards-wrapper {
     display: flex;
-    align-items: stretch;
-    justify-content: center;
+    flex-direction: column;
     width: 100%;
-    max-width: 1000px;
+    gap: 24px;
 
     .card {
-      padding: 10px;
-      border-right: 1px solid $red;
-      flex: 1 1 0;
+      padding: 16px;
+      border-bottom: 1px solid $red;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      min-height: 120px;
-
-      &:last-child {
-        border-right: none;
-      }
+      align-items: center;
 
       h3 {
         margin: 0 0 6px;
@@ -43,6 +35,64 @@
       p {
         margin: 0;
         color: $grey;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+// Планшетна версія
+@include tablet {
+  #in-numbers {
+    .cards-wrapper {
+      flex-direction: row;
+      gap: 0;
+      align-items: stretch;
+
+      .card {
+        flex: 1 1 0;
+        border-bottom: none;
+        border-right: 1px solid $red;
+        min-height: 140px;
+
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+  }
+}
+
+// Ноутбуки
+@include laptop {
+  #in-numbers {
+    .cards-wrapper {
+      .card {
+        padding: 22px;
+
+        h3 {
+          font-size: 44px;
+        }
+      }
+    }
+  }
+}
+
+// Десктопи
+@include desktop {
+  #in-numbers {
+    .cards-wrapper {
+      max-width: 1200px;
+
+      .card {
+        padding: 28px;
+
+        h3 {
+          font-size: 48px;
+        }
       }
     }
   }
